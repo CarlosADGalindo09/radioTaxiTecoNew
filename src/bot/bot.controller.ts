@@ -13,6 +13,10 @@ export class BotController {
     const challenge = req.query['hub.challenge'];
     const mode = req.query['hub.mode'];
 
+    console.log(token);
+    console.log(challenge);
+    console.log(mode);
+
     return this.botService.verifyToken(tokenVerify,token,challenge,mode);
   }
 
