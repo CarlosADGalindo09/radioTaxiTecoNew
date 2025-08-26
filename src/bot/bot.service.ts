@@ -7,10 +7,10 @@ export class BotService {
 
   constructor(private httpService:HttpService){}
 
-  verifyToken(tokenVerify,token,challenge) {
+  verifyToken(tokenVerify,token,challenge,mode) {
 
-    if(challenge!=null && token!=null && token==tokenVerify){
-      return challenge;
+    if(mode!=null && token!=null && token===tokenVerify){
+      return challenge?.toString();
     }else{
       throw new HttpException('Error al recibir el mensaje', HttpStatus.BAD_REQUEST);//codigo 400
     }

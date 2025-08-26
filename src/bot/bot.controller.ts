@@ -11,10 +11,9 @@ export class BotController {
     const tokenVerify=process.env.TOKEN_VERIFY;
     const token = req.query['hub.verify_token'];
     const challenge = req.query['hub.challenge'];
-    //const mode = req.query['hub.mode'];
+    const mode = req.query['hub.mode'];
 
-    return tokenVerify+'////'+token+'////'+challenge;
-    //return this.botService.verifyToken(tokenVerify,token,challenge);
+    return this.botService.verifyToken(tokenVerify,token,challenge,mode);
   }
 
   @Post()
